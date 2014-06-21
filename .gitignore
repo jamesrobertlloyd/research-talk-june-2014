@@ -1,3 +1,5 @@
+jrl-research-talk-june-2014.pdf
+
 *.py[co]
 
 # Packages
@@ -68,7 +70,3 @@ posters/jl-tea/tex/*.pdf
 *.backup
 
 *.Rhistory
-
-
-
-jrl-research-talk-june-2014.pdf
