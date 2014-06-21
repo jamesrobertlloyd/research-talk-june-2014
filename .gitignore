@@ -1,91 +1,74 @@
-## Core latex/pdflatex auxiliary files:
+*.py[co]
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+#Translations
+*.mo
+
+#Mr Developer
+.mr.developer.cfg
+
 *.aux
-*.lof
-*.log
-*.lot
-*.fls
-*.out
-*.toc
-
-## Intermediate documents:
-*.dvi
-# these rules might exclude image files for figures etc.
-# *.ps
-# *.eps
-# *.pdf
-
-## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.swp
 *.bbl
-*.bcf
 *.blg
-*-blx.aux
-*-blx.bib
-*.run.xml
-
-## Build tool auxiliary files:
+*.dvi
 *.fdb_latexmk
-*.synctex.gz
-*.synctex.gz(busy)
-*.pdfsync
-
-## Auxiliary and intermediate files from other packages:
-
-# algorithms
-*.alg
-*.loa
-
-# amsthm
-*.thm
-
-# beamer
-*.nav
-*.snm
-*.vrb
-
-# glossaries
-*.acn
-*.acr
 *.glg
 *.glo
 *.gls
-
-# hyperref
-*.brf
-
-# listings
-*.lol
-
-# makeidx
 *.idx
 *.ilg
 *.ind
 *.ist
-
-# minitoc
+*.lof
+*.log
+*.lot
+*.nav
+*.nlo
+*.out
+*.pdfsync
+*.ps
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
 *.maf
 *.mtc
 *.mtc0
+latex/*.pdf
+posters/jl-tea/tex/*.pdf
 
-# minted
-*.pyg
+*~
+.metadata/
+*.unfinished
+*.nans
+*.oob
 
-# nomencl
-*.nlo
+.DS_Store
 
-# sagetex
-*.sagetex.sage
-*.sagetex.py
-*.sagetex.scmd
+*.backup
 
-# sympy
-*.sout
-*.sympy
-sympy-plots-for-*.tex/
+*.Rhistory
 
-# todonotes
-*.tdo
 
-# xindy
-*.xdy
 
 jrl-research-talk-june-2014.pdf
