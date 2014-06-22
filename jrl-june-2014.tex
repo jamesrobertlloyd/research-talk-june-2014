@@ -760,7 +760,7 @@ The following discrepancies between the prior and posterior distributions for th
 
 \begin{frame}{A nonparametric approach}
   \begin{itemize}
-    \item Instead of defining a statistic parametrically to identify a discrepancy, we pick the statistic that most shows any discrepancy from some function space
+    \item Instead of defining a statistic parametrically to measure a discrepancy, we pick the statistic that most shows any discrepancy
     \vspace{\baselineskip}
     \item Based on the maximum mean discrepancy between two distributions
     \begin{itemize}
@@ -783,14 +783,42 @@ The following discrepancies between the prior and posterior distributions for th
   \end{center}
 \end{frame}
 
-\begin{frame}{What next?}
-Need some sort of agenda slide to break things up
-List lots of obvious extensions to project.
-How do we tie together the project?
+\begin{frame}{What next for the automatic statistician?}
+ \begin{itemize}
+   \item Plenty of ways to extend this line of work \eg
+   \begin{itemize}
+     \item Reducing the computational cost of model search
+     \item Increasing the expressivity of the modelling language (\eg monotonicity, positive functions)
+     \item Extending descriptions to multi-dimensional functions
+     \item Different likelihoods
+     \item Different types of data (\eg exchangeable arrays)
+     \item Missing data
+     \item \dots
+   \end{itemize}
+   \vspace{\baselineskip}
+   \item How can we tie the automatic statistician project together?
+ \end{itemize}
 \end{frame}
 
 \begin{frame}{An API for the automatic statistician}
-  List the standard things and then append `describe' and `check'
+  \begin{itemize}
+    \item Many automatic / standardised tools for machine learning
+    \begin{itemize}
+      \item Goole prediction API, scikit-learn, auto-WEKA, \dots
+    \end{itemize}
+    \vspace{\baselineskip}
+    \item Focused on predictions, essentially implementing the following functions
+    \begin{itemize}
+      \item train
+      \item predict
+    \end{itemize}
+    \vspace{\baselineskip}
+    \item Let's implement some more functions
+    \begin{itemize}
+      \item describe
+      \item criticise
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Thanks}
