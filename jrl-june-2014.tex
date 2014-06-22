@@ -126,7 +126,7 @@ Four additive components have been identified in the data
   \end{center}
 \end{frame}
 
-\begin{frame}{More complex kernels}
+\begin{frame}{More complex kernels required}
   \begin{center}
     \only<1>{Long lengthscale SE}
     \only<2>{Short lengthscale SE}
@@ -659,13 +659,43 @@ Four additive components have been identified in the data
   \input{figures/flow_chart_check}
 \end{frame}
 
-\begin{frame}{Model checking / criticism}
+\begin{frame}{Is this model `correct'?}
+\newcommand{\wmgd}{0.5\columnwidth}
+\newcommand{\hmgd}{3.0cm}
+\newcommand{\mdrd}{figures/11-unemployment}
+\newcommand{\mbm}{\hspace{-0.3cm}}
+\begin{tabular}{cc}
+\mbm \includegraphics[width=\wmgd,height=\hmgd]{\mdrd/11-unemployment_raw_data} & \includegraphics[width=\wmgd,height=\hmgd]{\mdrd/11-unemployment_all}
+\end{tabular}
+
+{\footnotesize
+\begin{itemize}
+
+  \item \input{\mdrd/11-unemployment_1_short_description.tex} 
+
+  \item \input{\mdrd/11-unemployment_2_short_description.tex} 
+
+  \item \input{\mdrd/11-unemployment_3_short_description.tex} 
+
+  \item \input{\mdrd/11-unemployment_4_short_description.tex} 
+
+  \item \input{\mdrd/11-unemployment_5_short_description.tex} 
+
+\end{itemize}
+}
+\end{frame}
+
+\begin{frame}{Model criticism}
   \begin{itemize}
-    \item Is my model wrong? Typically performed using alternative free hypothesis test.
+    \item Model criticism attempts to answer the question `Is my model wrong?'
     \vspace{\baselineskip}
-    \item Typically requires a statistic by which to measure whether data is extreme
+    \item Typically answered by choosing a statistic by which to measure whether data is extreme
+    \begin{itemize}
+      \item Can then compute $p$-values to quantify surprise
+      \item $p(\textrm{Data}) = \mathbb{P}(T(\textrm{Hypothetical data}) > T(\textrm{Data}) \,|\, \textrm{Model})$
+    \end{itemize}
     \vspace{\baselineskip}
-    \item How would an automatic system choose the statistics?
+    \item How would an automatic system choose this statistic?
   \end{itemize}
 \end{frame}
 
