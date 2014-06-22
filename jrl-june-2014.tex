@@ -127,7 +127,18 @@ Four additive components have been identified in the data
 \end{frame}
 
 \begin{frame}{More complex kernels}
-  Draw Mauna Loa data, show failure of various length scales, show Carl's kernel
+  \begin{center}
+    \only<1>{Long lengthscale SE}
+    \only<2>{Short lengthscale SE}
+    \only<3>{Long lengthscale SE + Short lengthscale SE}
+    \only<4>{SE + SE + SE + SE $\times$ Periodic}
+  \end{center}
+  \begin{center}
+    \includegraphics<1>[width=0.8\textwidth]{figures/mauna-plots/SE-long.pdf}
+    \includegraphics<2>[width=0.8\textwidth]{figures/mauna-plots/SE-short.pdf}
+    \includegraphics<3>[width=0.8\textwidth]{figures/mauna-plots/SE-SE.pdf}
+    \includegraphics<4>[width=0.8\textwidth]{figures/mauna-plots/Complex.pdf}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Defining a language of models}
@@ -692,6 +703,26 @@ How do we tie together the project?
 \end{frame}
 
 \begin{frame}{Appendix}
+\end{frame}
+
+\begin{frame}{Gaussian processes}
+  \begin{itemize}
+    \item A Gaussian process is collection of random variables, any finite number of which have a joint Gaussian distribution
+    \pause
+    \vspace{\baselineskip}
+    \item We can write this collection of random variables as $\{f(x) : x \in \mathcal{X}\}$ \ie a function $f$ evaluated at inputs $x$
+    \pause
+    \vspace{\baselineskip}
+    \item A \gp{} is completely specified by
+    \begin{itemize}
+      \item Mean function, $\mu(x)=\mathbb{E}(f(x))$
+      \item Covariance / kernel function, $\kernel(x,x') = \Cov(f(x),f(x'))$
+      \item Denoted $f \,\sim\, \gp{}(\mu,\kernel)$
+    \end{itemize}
+    \vspace{\baselineskip}
+    \pause
+    \item Can be thought of as a probability distribution on functions
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{A language of Gaussian process kernels}

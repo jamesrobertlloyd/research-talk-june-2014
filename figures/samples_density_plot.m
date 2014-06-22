@@ -7,7 +7,8 @@ function samples_density_plot( xdata, ydata, xrange, forecast_mu, forecast_K, da
     lw = 1.3;
     %light_blue = [227 237 255]./255;
     
-    quantiles = 0:0.01:0.5;
+    quantum = 0.01;
+    quantiles = quantum:quantum:(0.5-quantum);
     opacity = 0.2;
     
     if ~data_only
@@ -17,7 +18,7 @@ function samples_density_plot( xdata, ydata, xrange, forecast_mu, forecast_K, da
         for s = quantiles
             % CHECK ME
             edges = [f+norminv(s, 0, 1).*sqrt(variance); ...
-            flipdim(f-norminv(s, 0, 1).*sqrt(variance),1)]; 
+                     flipdim(f-norminv(s, 0, 1).*sqrt(variance),1)]; 
             hc1 = fill([xrange; flipdim(xrange,1)], edges, color_spectrum(2*s), 'EdgeColor', 'none'); hold on;
         end  
         hold on;   
@@ -35,7 +36,7 @@ function samples_density_plot( xdata, ydata, xrange, forecast_mu, forecast_K, da
     set(gca,'Layer','top');  % Stop axes from being overridden.
     
     if ~no_data
-        plot( xdata, ydata, 'k.', 'MarkerSize', 20);
+        plot( xdata, ydata, 'k.', 'MarkerSize', 5);
     end
  
     %if ~data_only
