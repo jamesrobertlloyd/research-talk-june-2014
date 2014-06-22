@@ -758,12 +758,29 @@ The following discrepancies between the prior and posterior distributions for th
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Criticism using two sample tests}
-  MMD
+\begin{frame}{A nonparametric approach}
+  \begin{itemize}
+    \item Instead of defining a statistic parametrically to identify a discrepancy, we pick the statistic that most shows any discrepancy from some function space
+    \vspace{\baselineskip}
+    \item Based on the maximum mean discrepancy between two distributions
+    \begin{itemize}
+      \item $\textrm{MMD}(\mathcal{F},p,q) = \sup_{f \in \mathcal{F}}(\mathbb{E}_{x\sim p}[f(x)] - \mathbb{E}_{y\sim q}[f(y)])$ where $\mathcal{F}$ is a set of functions
+    \end{itemize}
+    \vspace{\baselineskip}
+    \item The function attaining the supremum can be computed analytically when $\mathcal{F}$ is an RKHS
+    \begin{itemize}
+      \item $f(x) = \mathbb{E}_{x'\sim p}[k(x,x')] - \mathbb{E}_{x'\sim q}[k(x,x')]$
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Example}
-  Basic examples
+  \begin{center}
+  \begin{tabular}{cc}
+    \includegraphics[width=0.435\textwidth]{figures/newcomb_hist} &
+    \includegraphics[width=0.48\textwidth]{figures/newcomb_witness_1}
+  \end{tabular}
+  \end{center}
 \end{frame}
 
 \begin{frame}{What next?}
