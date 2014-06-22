@@ -62,6 +62,7 @@ figure(fig_count);
 fig_count = fig_count + 1;
 
 samples_density_plot(X, y, [X;Xtest], mu, post_K);
+ylim([-30,40]);
 
 drawnow;
 save2pdf([ 'mauna-plots/' 'SE-short' '.pdf'], gcf, 600, true);

@@ -699,12 +699,63 @@ Four additive components have been identified in the data
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Potential solution: Try many statistics}
+
+\begin{itemize}
+  \item $p$-values of several statistics for each model component
+\end{itemize}
+
+\vspace{\baselineskip}
+
+\begin{center}
+\begin{tabular}{|r|rr|rr|rr|}
+\hline
+ & \multicolumn{2}{c|}{ACF} & \multicolumn{2}{c|}{Periodogram} & \multicolumn{2}{c|}{QQ} \\
+\bf{\#} & {min} & {min loc} & {max} & {max loc} & {max} & {min}\\
+\hline
+
+1 & \textcolor{gray}{0.502} & \textcolor{gray}{0.582} & \textcolor{gray}{0.341} & \textcolor{gray}{0.413} & \textcolor{gray}{0.341} & \textcolor{gray}{0.679}\\
+
+2 & \textcolor{gray}{0.802} & \textcolor{gray}{0.199} & \textcolor{gray}{0.558} & \textcolor{gray}{0.630} & 0.049 & \textcolor{gray}{0.785}\\
+
+3 & \textcolor{gray}{0.251} & \textcolor{gray}{0.475} & \textcolor{gray}{0.799} & \textcolor{gray}{0.447} & \textcolor{gray}{0.534} & \textcolor{gray}{0.769}\\
+
+4 & \textcolor{gray}{0.527} & \textcolor{gray}{0.503} & \textcolor{gray}{0.504} & \textcolor{gray}{0.481} & \textcolor{gray}{0.430} & \textcolor{gray}{0.616}\\
+
+5 & \textcolor{gray}{0.493} & \textcolor{gray}{0.477} & \textcolor{gray}{0.503} & \textcolor{gray}{0.487} & \textcolor{gray}{0.518} & \textcolor{gray}{0.381}\\
+
+\hline
+\end{tabular}
+\end{center}
+
+\end{frame}
+
 \begin{frame}{Example: Identifying outliers}
-  See pdf
+  \newcommand{\wmgd}{0.5\columnwidth}
+  \newcommand{\hmgd}{3.0cm}
+  \newcommand{\mdrd}{figures/11-unemployment} 
+  \newcommand{\mbm}{\hspace{-0.3cm}}
+The following discrepancies between the prior and posterior distributions for this component have been detected.
+\begin{itemize}
+    \item The qq plot has an unexpectedly large positive deviation from equality ($x = y$). This discrepancy has an estimated $p$-value of 0.049.
+\end{itemize}
+
+\vspace{\baselineskip}
+
+\begin{tabular}{cc}
+\mbm \includegraphics[width=\wmgd,height=\hmgd]{\mdrd/11-unemployment_2} & 
+\mbm \includegraphics[width=\wmgd,height=\hmgd]{\mdrd/11-unemployment_qq_bands_2}
+\end{tabular}
 \end{frame}
 
 \begin{frame}{Alternatives to choosing one statistic}
-  Lots of statistics with appropriate multiple comparisons adjustments. Something nonparametric (what I have just done)? Some sort of grammar based search over statistics?
+  \begin{itemize}
+    \item Compute many statistics with appropriate multiple comparisons adjustments
+    \vspace{\baselineskip}
+    \item Something nonparametric?
+    \vspace{\baselineskip}
+    \item Some sort of grammar based search over statistics?
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Criticism using two sample tests}
