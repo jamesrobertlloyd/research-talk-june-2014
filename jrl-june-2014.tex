@@ -765,14 +765,35 @@ The following discrepancies between the prior and posterior distributions for th
   \begin{itemize}
     \item Instead of defining a statistic parametrically to measure a discrepancy, we pick the statistic that most shows any discrepancy
     \vspace{\baselineskip}
+    \pause
     \item Based on the maximum mean discrepancy between two distributions
     \begin{itemize}
       \item $\textrm{MMD}(\mathcal{F},p,q) = \sup_{f \in \mathcal{F}}(\mathbb{E}_{x\sim p}[f(x)] - \mathbb{E}_{y\sim q}[f(y)])$ where $\mathcal{F}$ is a set of functions
     \end{itemize}
     \vspace{\baselineskip}
+    \pause
     \item The function attaining the supremum can be computed analytically when $\mathcal{F}$ is an RKHS
     \begin{itemize}
-      \item $f(x) = \mathbb{E}_{x'\sim p}[k(x,x')] - \mathbb{E}_{x'\sim q}[k(x,x')]$
+      \item $f(x) = \mathbb{E}_{x'\sim p}[k(x,x')] - \mathbb{E}_{y'\sim q}[k(x,y')]$
+      \item Called the `witness function'
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{A nonparametric approach}
+  \begin{itemize}
+    \item The witness function can be estimated from finite samples from $p$ and $q$
+    \begin{itemize}
+      \item $\hat{f}(x) = \frac{1}{m}\sum_{i=1}^{m}k(x,x_i) - \frac{1}{n}\sum_{i=1}^{n}k(x,y_i)$
+    \end{itemize}
+    \vspace{\baselineskip}
+    \pause
+    \item This is just the difference between two kernel density estimates
+    \vspace{\baselineskip}
+    \pause
+    \item We can plug this into the MMD equation to form an estimate of the discrepancy
+    \begin{itemize}
+      \item The distribution of this estimate under the null hypotheis ($p=q$) can be estimated using a bootstrap method
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -838,10 +859,8 @@ The following discrepancies between the prior and posterior distributions for th
 \begin{frame}{Gaussian processes}
   \begin{itemize}
     \item A Gaussian process is collection of random variables, any finite number of which have a joint Gaussian distribution
-    \pause
     \vspace{\baselineskip}
     \item We can write this collection of random variables as $\{f(x) : x \in \mathcal{X}\}$ \ie a function $f$ evaluated at inputs $x$
-    \pause
     \vspace{\baselineskip}
     \item A \gp{} is completely specified by
     \begin{itemize}
@@ -850,7 +869,6 @@ The following discrepancies between the prior and posterior distributions for th
       \item Denoted $f \,\sim\, \gp{}(\mu,\kernel)$
     \end{itemize}
     \vspace{\baselineskip}
-    \pause
     \item Can be thought of as a probability distribution on functions
   \end{itemize}
 \end{frame}
